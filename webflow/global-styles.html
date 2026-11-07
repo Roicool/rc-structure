@@ -1,6 +1,6 @@
 <style>
 /* ============================================
-   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.8
+   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.10
    Sadece Designer'ın veremediği şeyler.
    Kaynak: github.com/Roicool/rc-structure/webflow/global-styles.html
    ============================================ */
@@ -76,6 +76,10 @@ html { scroll-padding-top: 90px; }
 /* Stat kartları (İnavitas Elektrik): yarı saydam zemin. Style API color-mix kaydetmiyor, kural burada */
 .stat-card { background-color: color-mix(in srgb, var(--neutral--925) 60%, transparent); }
 .stat-card.is-soft { background-color: color-mix(in srgb, var(--neutral--925) 40%, transparent); }
+/* Why slider (İnavitas Elektrik): kaydırma çubuğu gizli, uçta pasif ok (carousel modülü disabled verir) */
+.why-track { scrollbar-width: none; }
+.why-track::-webkit-scrollbar { display: none; }
+.why-nav-btn[disabled], .why-nav-btn[aria-disabled="true"] { color: var(--neutral--550); cursor: default; }
 
 /* ── NAV DROPDOWN (JS'siz) ──────────────────────────────────────
    .nav-dropdown > .nav-link + .nav-dropdown-panel

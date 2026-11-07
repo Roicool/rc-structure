@@ -1,6 +1,6 @@
 <style>
 /* ============================================
-   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.6
+   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.7
    Sadece Designer'ın veremediği şeyler.
    Kaynak: github.com/Roicool/rc-structure/webflow/global-styles.html
    ============================================ */
@@ -40,11 +40,11 @@
   /* Hero arka planları */
   --gradient--hero-dawn:    radial-gradient(120% 80% at 50% 0%, var(--brand-primary--100), var(--neutral--0) 70%);
   --gradient--hero-dusk:    radial-gradient(120% 80% at 50% 0%, var(--brand-secondary--800), var(--neutral--950) 70%);
-  --gradient--hero-halo:    radial-gradient(60% 50% at 50% 0%, color-mix(in oklch, var(--brand-primary--300) 60%, transparent), transparent 70%);
+  --gradient--hero-halo:    radial-gradient(60% 50% at 50% 0%, color-mix(in srgb, var(--brand-primary--300) 60%, transparent), transparent 70%);
 
   /* Parıltı */
-  --gradient--glow-warm:    radial-gradient(50% 50% at 50% 50%, color-mix(in oklch, var(--brand-primary--300) 50%, transparent), transparent 70%);
-  --gradient--glow-cool:    radial-gradient(50% 50% at 50% 50%, color-mix(in oklch, var(--brand-secondary--300) 50%, transparent), transparent 70%);
+  --gradient--glow-warm:    radial-gradient(50% 50% at 50% 50%, color-mix(in srgb, var(--brand-primary--300) 50%, transparent), transparent 70%);
+  --gradient--glow-cool:    radial-gradient(50% 50% at 50% 50%, color-mix(in srgb, var(--brand-secondary--300) 50%, transparent), transparent 70%);
 
   /* Yumuşak zeminler */
   --gradient--wash-warm:    linear-gradient(180deg, var(--brand-primary--100), var(--neutral--0));
@@ -53,9 +53,9 @@
   --gradient--wash-rise:    linear-gradient(0deg, var(--brand-primary--100), transparent);
 
   /* Görsel üstü karartma (okunabilirlik) */
-  --gradient--scrim-top:    linear-gradient(180deg, color-mix(in oklch, var(--neutral--950) 70%, transparent), transparent);
-  --gradient--scrim-bottom: linear-gradient(0deg, color-mix(in oklch, var(--neutral--950) 70%, transparent), transparent);
-  --gradient--scrim-full:   linear-gradient(0deg, color-mix(in oklch, var(--neutral--950) 60%, transparent), color-mix(in oklch, var(--neutral--950) 60%, transparent));
+  --gradient--scrim-top:    linear-gradient(180deg, color-mix(in srgb, var(--neutral--950) 70%, transparent), transparent);
+  --gradient--scrim-bottom: linear-gradient(0deg, color-mix(in srgb, var(--neutral--950) 70%, transparent), transparent);
+  --gradient--scrim-full:   linear-gradient(0deg, color-mix(in srgb, var(--neutral--950) 60%, transparent), color-mix(in srgb, var(--neutral--950) 60%, transparent));
 }
 
 
@@ -71,7 +71,7 @@ h1, h2, h3, h4, h5, h6, p, figure, blockquote, ul, ol { margin-top: 0; margin-bo
    data-rc-nav="top" ekler → şeffaf.
 ─────────────────────────────────────────────────────────────── */
 html { scroll-padding-top: 90px; }
-.nav { background-color: color-mix(in oklch, var(--neutral--900) 88%, transparent); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid color-mix(in oklch, var(--neutral--0) 6%, transparent); }
+.nav { background-color: color-mix(in srgb, var(--neutral--900) 88%, transparent); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid color-mix(in srgb, var(--neutral--0) 6%, transparent); }
 .nav[data-rc-nav="top"] { background-color: transparent; -webkit-backdrop-filter: none; backdrop-filter: none; border-bottom-color: transparent; }
 
 /* ── NAV DROPDOWN (JS'siz) ──────────────────────────────────────

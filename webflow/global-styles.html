@@ -1,6 +1,6 @@
 <style>
 /* ============================================
-   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.7
+   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.8
    Sadece Designer'ın veremediği şeyler.
    Kaynak: github.com/Roicool/rc-structure/webflow/global-styles.html
    ============================================ */
@@ -73,6 +73,9 @@ h1, h2, h3, h4, h5, h6, p, figure, blockquote, ul, ol { margin-top: 0; margin-bo
 html { scroll-padding-top: 90px; }
 .nav { background-color: color-mix(in srgb, var(--neutral--900) 88%, transparent); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border-bottom: 1px solid color-mix(in srgb, var(--neutral--0) 6%, transparent); }
 .nav[data-rc-nav="top"] { background-color: transparent; -webkit-backdrop-filter: none; backdrop-filter: none; border-bottom-color: transparent; }
+/* Stat kartları (İnavitas Elektrik): yarı saydam zemin. Style API color-mix kaydetmiyor, kural burada */
+.stat-card { background-color: color-mix(in srgb, var(--neutral--925) 60%, transparent); }
+.stat-card.is-soft { background-color: color-mix(in srgb, var(--neutral--925) 40%, transparent); }
 
 /* ── NAV DROPDOWN (JS'siz) ──────────────────────────────────────
    .nav-dropdown > .nav-link + .nav-dropdown-panel

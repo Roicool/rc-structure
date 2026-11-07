@@ -1,0 +1,11 @@
+{
+  "name": "rc-structure",
+  "version": "0.1.0",
+  "private": true,
+  "description": "İnavitas grubu sitelerinin ortak rc-structure kodu: ortak JS modülleri ve Global Styles CSS.",
+  "scripts": {
+    "build": "esbuild src/main.js --bundle --minify --format=iife --target=es2018 --define:__VERSION__='\"0.1.0\"' --outfile=dist/main.min.js",
+    "watch": "esbuild src/main.js --bundle --format=iife --target=es2018 --outfile=dist/main.min.js --watch"
+  },
+  "devDependencies": { "esbuild": "0.25.0" }
+}

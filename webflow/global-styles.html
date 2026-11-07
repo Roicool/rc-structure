@@ -1,6 +1,6 @@
 <style>
 /* ============================================
-   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.1
+   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.4
    Sadece Designer'ın veremediği şeyler.
    Kaynak: github.com/Roicool/rc-structure/webflow/global-styles.html
    ============================================ */
@@ -17,6 +17,10 @@
   --gradient--brand-hover:  linear-gradient(135deg, var(--brand-primary--600), var(--brand-secondary--600));
   --gradient--brand-soft:   linear-gradient(135deg, var(--brand-primary--100), var(--brand-secondary--100));
   --gradient--brand-deep:   linear-gradient(135deg, var(--brand-primary--800), var(--brand-secondary--900));
+
+  /* Buton */
+  --gradient--btn-primary:       linear-gradient(90deg, var(--brand-primary--600), var(--brand-primary--400));
+  --gradient--btn-primary-hover: linear-gradient(90deg, var(--brand-primary--700), var(--brand-primary--500));
 
   /* Koyu yüzeyler */
   --gradient--ink:          linear-gradient(180deg, var(--neutral--900), var(--neutral--950));
@@ -51,6 +55,38 @@
   --gradient--scrim-bottom: linear-gradient(0deg, color-mix(in oklch, var(--neutral--950) 70%, transparent), transparent);
   --gradient--scrim-full:   linear-gradient(0deg, color-mix(in oklch, var(--neutral--950) 60%, transparent), color-mix(in oklch, var(--neutral--950) 60%, transparent));
 }
+
+
+/* ── MARGIN RESET ──────────────────────────────────────────────
+   Webflow'un varsayılan h1–h6 / p / figure / blockquote margin'leri
+   utility sistemini bozar (ölçülen bug: h1 alt 10px + p alt 10px).
+   Boşluk her zaman gap-* / m*-* utility'leri ile verilir.
+─────────────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6, p, figure, blockquote, ul, ol { margin-top: 0; margin-bottom: 0; }
+
+/* ── NAV DROPDOWN (JS'siz) ──────────────────────────────────────
+   .nav-dropdown > .nav-link + .nav-dropdown-panel
+   Hover ve klavye odağında (focus-within) açılır. Designer'ın veremediği
+   ebeveyn-hover → çocuk seçicileri burada.
+─────────────────────────────────────────────────────────────── */
+.nav-dropdown:hover > .nav-dropdown-panel,
+.nav-dropdown:focus-within > .nav-dropdown-panel { visibility: visible; opacity: 1; }
+.nav-dropdown:hover > .nav-link,
+.nav-dropdown:focus-within > .nav-link { background-color: var(--neutral--0); color: var(--brand-secondary--600); }
+.nav-dropdown > .nav-link svg { transition: transform 200ms ease; }
+/* Mobil menü (native popover, JS'siz) */
+.nav:has(.mobile-menu:popover-open) .nav-burger-open { display: none; }
+.nav:has(.mobile-menu:popover-open) .nav-burger-close { display: flex; }
+.nav-burger { border: 0; padding: 0; }
+.mobile-acc > summary { list-style: none; }
+.mobile-acc > summary::-webkit-details-marker { display: none; }
+.mobile-acc > summary svg { transition: transform 200ms ease; flex-shrink: 0; }
+.mobile-acc[open] > summary svg { transform: rotate(180deg); }
+.mobile-acc[open] > summary { color: var(--brand-secondary--600); }
+/* 2 satır kırpma — Webflow -webkit-line-clamp'i Designer'da düşürüyor */
+.news-card-title { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; }
+.nav-dropdown:hover > .nav-link svg,
+.nav-dropdown:focus-within > .nav-link svg { transform: rotate(180deg); }
 
 
 /* ── FONT & TEXT RENDERING ───────────────────────────────────── */

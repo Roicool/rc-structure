@@ -1,6 +1,6 @@
 <style>
 /* ============================================
-   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.10
+   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.11
    Sadece Designer'ın veremediği şeyler.
    Kaynak: github.com/Roicool/rc-structure/webflow/global-styles.html
    ============================================ */
@@ -80,6 +80,20 @@ html { scroll-padding-top: 90px; }
 .why-track { scrollbar-width: none; }
 .why-track::-webkit-scrollbar { display: none; }
 .why-nav-btn[disabled], .why-nav-btn[aria-disabled="true"] { color: var(--neutral--550); cursor: default; }
+/* Why cards — hover reveal (Builder A, r4). Kapalıyken açıklama satırı 0 yükseklik: overflow + min-height */
+.why-card>img{border-radius:inherit}
+.why-card-shade,.why-card-reveal,.why-card-desc{transition:opacity .3s ease-out,grid-template-rows .3s ease-out,transform .3s ease-out}
+.why-card-reveal{grid-template-rows:0fr;opacity:0;overflow:hidden}
+.why-card-reveal>*{min-height:0}
+.why-card-desc{transform:translateY(8px)}
+.why-card:hover .why-card-shade,.why-card:focus-within .why-card-shade{opacity:.8}
+.why-card:hover .why-card-reveal,.why-card:focus-within .why-card-reveal{grid-template-rows:1fr;opacity:1}
+.why-card:hover .why-card-desc,.why-card:focus-within .why-card-desc{transform:none}
+@media (hover:none){.why-card-shade{opacity:.8}.why-card-reveal{grid-template-rows:1fr;opacity:1}.why-card-desc{transform:none}}
+/* Why nav — arrow hover */
+.why-nav-btn{transition:background-color .2s ease-out}
+.why-nav-btn:not([disabled]):hover,.why-nav-btn:not([disabled]):focus-visible{background-color:var(--interactive--nav-hover)}
+@media (prefers-reduced-motion:reduce){.why-card-shade,.why-card-reveal,.why-card-desc,.why-nav-btn{transition:none}}
 
 /* ── NAV DROPDOWN (JS'siz) ──────────────────────────────────────
    .nav-dropdown > .nav-link + .nav-dropdown-panel

@@ -1,0 +1,127 @@
+<style>
+/* ============================================
+   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.1
+   Sadece Designer'ın veremediği şeyler.
+   Kaynak: github.com/Roicool/rc-structure/webflow/global-styles.html
+   ============================================ */
+
+
+/* ── GRADIENT TOKENLARI ────────────────────────────────────────
+   bg-gradient-*, text-gradient-*, border-gradient-* class'ları
+   bu değişkenleri kullanır. Değerler renk token'larından türer;
+   sitede marka renkleri değişince gradient'ler de otomatik değişir.
+─────────────────────────────────────────────────────────────── */
+:root {
+  /* Marka */
+  --gradient--brand:        linear-gradient(135deg, var(--brand-primary--500), var(--brand-secondary--500));
+  --gradient--brand-hover:  linear-gradient(135deg, var(--brand-primary--600), var(--brand-secondary--600));
+  --gradient--brand-soft:   linear-gradient(135deg, var(--brand-primary--100), var(--brand-secondary--100));
+  --gradient--brand-deep:   linear-gradient(135deg, var(--brand-primary--800), var(--brand-secondary--900));
+
+  /* Koyu yüzeyler */
+  --gradient--ink:          linear-gradient(180deg, var(--neutral--900), var(--neutral--950));
+  --gradient--ink-flat:     linear-gradient(180deg, var(--neutral--950), var(--neutral--900));
+
+  /* Metin */
+  --gradient--text-brand:   linear-gradient(90deg, var(--brand-primary--500), var(--brand-secondary--500));
+  --gradient--text-ink:     linear-gradient(90deg, var(--neutral--950), var(--neutral--600));
+  --gradient--text-mist:    linear-gradient(90deg, var(--neutral--0), var(--neutral--400));
+
+  /* Kenarlık */
+  --gradient--border-brand: linear-gradient(135deg, var(--brand-primary--500), var(--brand-secondary--500));
+  --gradient--border-shine: linear-gradient(135deg, var(--neutral--0), var(--neutral--300), var(--neutral--0));
+
+  /* Hero arka planları */
+  --gradient--hero-dawn:    radial-gradient(120% 80% at 50% 0%, var(--brand-primary--100), var(--neutral--0) 70%);
+  --gradient--hero-dusk:    radial-gradient(120% 80% at 50% 0%, var(--brand-secondary--800), var(--neutral--950) 70%);
+  --gradient--hero-halo:    radial-gradient(60% 50% at 50% 0%, color-mix(in oklch, var(--brand-primary--300) 60%, transparent), transparent 70%);
+
+  /* Parıltı */
+  --gradient--glow-warm:    radial-gradient(50% 50% at 50% 50%, color-mix(in oklch, var(--brand-primary--300) 50%, transparent), transparent 70%);
+  --gradient--glow-cool:    radial-gradient(50% 50% at 50% 50%, color-mix(in oklch, var(--brand-secondary--300) 50%, transparent), transparent 70%);
+
+  /* Yumuşak zeminler */
+  --gradient--wash-warm:    linear-gradient(180deg, var(--brand-primary--100), var(--neutral--0));
+  --gradient--wash-cool:    linear-gradient(180deg, var(--brand-secondary--100), var(--neutral--0));
+  --gradient--wash-horizon: linear-gradient(180deg, var(--neutral--0), var(--neutral--100));
+  --gradient--wash-rise:    linear-gradient(0deg, var(--brand-primary--100), transparent);
+
+  /* Görsel üstü karartma (okunabilirlik) */
+  --gradient--scrim-top:    linear-gradient(180deg, color-mix(in oklch, var(--neutral--950) 70%, transparent), transparent);
+  --gradient--scrim-bottom: linear-gradient(0deg, color-mix(in oklch, var(--neutral--950) 70%, transparent), transparent);
+  --gradient--scrim-full:   linear-gradient(0deg, color-mix(in oklch, var(--neutral--950) 60%, transparent), color-mix(in oklch, var(--neutral--950) 60%, transparent));
+}
+
+
+/* ── FONT & TEXT RENDERING ───────────────────────────────────── */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ── MOBILE TAP HIGHLIGHT ────────────────────────────────────── */
+* { -webkit-tap-highlight-color: transparent; }
+
+/* ── SMOOTH SCROLL + SCROLLBAR GUTTER ────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+}
+
+/* ── IMAGES ──────────────────────────────────────────────────── */
+img, video {
+  display: block;
+  max-width: 100%;
+}
+
+/* ── TYPOGRAPHY OVERFLOW (uzun Türkçe kelimeler / URL'ler) ───── */
+p, li, blockquote, figcaption, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* ── FOCUS ───────────────────────────────────────────────────────
+   Mouse ile tıklamada outline yok, klavyede görünür.
+   :focus-visible desteklemeyen tarayıcıda varsayılan outline kalır.
+─────────────────────────────────────────────────────────────── */
+:focus:not(:focus-visible) { outline: none; }
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ── SELECTION (marka rengine bağlı) ─────────────────────────── */
+::selection {
+  background-color: var(--brand-primary--200);
+  color: inherit;
+}
+
+/* ── PLACEHOLDER ─────────────────────────────────────────────── */
+::placeholder {
+  opacity: 0.5;
+  color: inherit;
+}
+
+/* ── CURSOR ──────────────────────────────────────────────────── */
+button, [role="button"], label[for], select, summary {
+  cursor: pointer;
+}
+
+/* ── SVG RENK KALITIMI ───────────────────────────────────────────
+   Sadece fill attribute'u olmayan SVG'ler parent rengini alır.
+   Stroke (outline) ikonlar fill="none" taşır, bozulmaz.
+─────────────────────────────────────────────────────────────── */
+svg:not([fill]) { fill: currentColor; }
+
+/* ── REDUCED MOTION ──────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
+</style>

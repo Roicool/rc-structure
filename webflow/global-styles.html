@@ -1,6 +1,6 @@
 <style>
 /* ============================================
-   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.11
+   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.12
    Sadece Designer'ın veremediği şeyler.
    Kaynak: github.com/Roicool/rc-structure/webflow/global-styles.html
    ============================================ */
@@ -86,6 +86,7 @@ html { scroll-padding-top: 90px; }
 .why-card-reveal{grid-template-rows:0fr;opacity:0;overflow:hidden}
 .why-card-reveal>*{min-height:0}
 .why-card-desc{transform:translateY(8px)}
+.why-card-desc::before{content:"";display:block;height:1rem}
 .why-card:hover .why-card-shade,.why-card:focus-within .why-card-shade{opacity:.8}
 .why-card:hover .why-card-reveal,.why-card:focus-within .why-card-reveal{grid-template-rows:1fr;opacity:1}
 .why-card:hover .why-card-desc,.why-card:focus-within .why-card-desc{transform:none}

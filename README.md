@@ -9,7 +9,7 @@ Webflow custom code deposu. Kurallar: rc-structure çerçevesi (İnavitas grubu 
 Site Settings → Custom Code → **Footer (Before </body>)**:
 
 ```html
-<script defer src="https://cdn.jsdelivr.net/gh/Roicool/rc-structure@v0.1.0/dist/main.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/gh/Roicool/rc-structure@v0.2.0/dist/main.min.js"></script>
 ```
 
 - Production'da **her zaman sürüm etiketi** (`@vX.Y.Z`). `@main` sadece staging testinde.
@@ -33,7 +33,7 @@ npm run build      # dist/main.min.js üretir (commit'lenir)
 
 | Attribute | Modül | Açıklama |
 |-----------|-------|----------|
-| _henüz yok_ | | |
+| `data-rc="nav-scroll"` | `nav-scroll` | Fixed navbar: sayfa en üstteyken `data-rc-nav="top"` ekler (CSS şeffaf yapar), kaydırınca kaldırır. IntersectionObserver, scroll event yok. |
 
 Yeni modül: `src/modules/<ad>.js` (default export `(el) => {}`), `src/main.js` içindeki `modules` listesine eklenir, Webflow'da elemana `data-rc="<ad>"` verilir.
 

@@ -4,7 +4,7 @@
  * Her modül izole çalışır; biri hata verirse diğerleri etkilenmez.
  */
 const modules = {
-  // örnek: 'slider': () => import('./modules/slider.js'),
+  'nav-scroll': () => import('./modules/nav-scroll.js'),
 };
 
 function init(root = document) {

@@ -1,6 +1,6 @@
 <style>
 /* ============================================
-   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.4
+   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.6
    Sadece Designer'ın veremediği şeyler.
    Kaynak: github.com/Roicool/rc-structure/webflow/global-styles.html
    ============================================ */
@@ -23,6 +23,8 @@
   --gradient--btn-primary-hover: linear-gradient(90deg, var(--brand-primary--700), var(--brand-primary--500));
 
   /* Koyu yüzeyler */
+  --gradient--btn-soft:          linear-gradient(180deg, rgba(49, 81, 94, 0.1) 0%, rgba(49, 81, 94, 0.1) 0.01%, rgba(141, 180, 187, 0.1) 139.6%);
+  --gradient--btn-soft-hover:    linear-gradient(180deg, rgba(49, 81, 94, 0.16) 0%, rgba(141, 180, 187, 0.16) 139.6%);
   --gradient--ink:          linear-gradient(180deg, var(--neutral--900), var(--neutral--950));
   --gradient--ink-flat:     linear-gradient(180deg, var(--neutral--950), var(--neutral--900));
 
@@ -64,6 +66,14 @@
 ─────────────────────────────────────────────────────────────── */
 h1, h2, h3, h4, h5, h6, p, figure, blockquote, ul, ol { margin-top: 0; margin-bottom: 0; }
 
+/* ── FIXED NAVBAR ────────────────────────────────────────────────
+   Varsayılan koyu (JS yüklenmezse okunur). nav-scroll modülü en üstte
+   data-rc-nav="top" ekler → şeffaf.
+─────────────────────────────────────────────────────────────── */
+html { scroll-padding-top: 90px; }
+.nav { background-color: color-mix(in oklch, var(--neutral--900) 88%, transparent); -webkit-backdrop-filter: blur(12px) saturate(140%); backdrop-filter: blur(12px) saturate(140%); border-bottom: 1px solid color-mix(in oklch, var(--neutral--0) 6%, transparent); }
+.nav[data-rc-nav="top"] { background-color: transparent; -webkit-backdrop-filter: none; backdrop-filter: none; border-bottom-color: transparent; }
+
 /* ── NAV DROPDOWN (JS'siz) ──────────────────────────────────────
    .nav-dropdown > .nav-link + .nav-dropdown-panel
    Hover ve klavye odağında (focus-within) açılır. Designer'ın veremediği
@@ -78,11 +88,13 @@ h1, h2, h3, h4, h5, h6, p, figure, blockquote, ul, ol { margin-top: 0; margin-bo
 .nav:has(.mobile-menu:popover-open) .nav-burger-open { display: none; }
 .nav:has(.mobile-menu:popover-open) .nav-burger-close { display: flex; }
 .nav-burger { border: 0; padding: 0; }
-.mobile-acc > summary { list-style: none; }
+.mobile-acc { border-bottom: 1px solid var(--neutral--200); }
+.mobile-acc > summary { list-style: none; border-bottom: 0; }
 .mobile-acc > summary::-webkit-details-marker { display: none; }
 .mobile-acc > summary svg { transition: transform 200ms ease; flex-shrink: 0; }
 .mobile-acc[open] > summary svg { transform: rotate(180deg); }
 .mobile-acc[open] > summary { color: var(--brand-secondary--600); }
+@media screen and (max-width: 991px) { .nav-inner { padding-left: calc(var(--view--px) - var(--spacing--4)); padding-right: var(--view--px); } }
 /* 2 satır kırpma — Webflow -webkit-line-clamp'i Designer'da düşürüyor */
 .news-card-title { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; }
 .nav-dropdown:hover > .nav-link svg,

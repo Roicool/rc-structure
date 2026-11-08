@@ -1,6 +1,6 @@
 <style>
 /* ============================================
-   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.31
+   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.32
    Sadece Designer'ın veremediği şeyler.
    Kaynak: github.com/Roicool/rc-structure/webflow/global-styles.html
    ============================================ */
@@ -164,14 +164,23 @@ html.rc-modal-open{overflow:hidden}
 .res-rt.is-policy h2{font-size:1.75rem;line-height:1.75rem;font-weight:400;letter-spacing:-.0125rem}
 .res-rt.is-policy h2{margin-top:5.25rem;margin-bottom:1.5rem}
 .res-rt.is-policy>h2:first-child{margin-top:3.75rem}
+[data-res-overview]:not(:has(> .w-dyn-bind-empty)) ~ .res-rt.is-policy>h2:first-child{margin-top:4.25rem}
 .res-rt.is-policy h3{margin:1.75rem 0 0;font-size:1.25rem;line-height:1.75rem;font-weight:500;letter-spacing:-.03125rem}
 .res-rt .res-rt-table th,.res-rt .res-rt-table td{padding:1.875rem 1rem}
 .res-rt .res-rt-table tbody th{width:31.8%}
 .res-rt .res-rt-table tbody th,.res-rt .res-rt-table tbody td{height:6.25rem}
+/* Blog makale r2 */
+.res-rt h2{margin-bottom:2rem}
+.res-rt h3{letter-spacing:0}
+.res-rt p+h3{margin-top:5rem;margin-bottom:1.1875rem}
+.res-rt h2+h3{margin-top:.75rem}
+.res-rt figure.w-richtext-figure-type-image{margin-top:4.25rem}
 /* Overview kutusu: Overview text bossa gizle (Webflow bos bagli alana w-dyn-bind-empty ekler) */
 [data-res-overview]:has(> .w-dyn-bind-empty){display:none}
 /* Blog arama (rc cms-filter v0.5.0) */
 [data-rc-filtered="out"]{display:none!important}
+[data-rc-filter-empty]{display:none}
+body:has([data-rc-filter-list][data-rc-filtered="out"]) [data-rc-filter-empty]:not([hidden]){display:block}
 mark.rc-filter-hl{background-color:var(--accent--mint);color:var(--neutral--925);padding:0;border-radius:0}
 .res-search-input::placeholder{color:var(--neutral--600);opacity:1}
 .res-search-input:focus{outline:none}

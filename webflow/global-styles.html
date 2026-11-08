@@ -1,6 +1,6 @@
 <style>
 /* ============================================
-   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.17
+   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.18
    Sadece Designer'ın veremediği şeyler.
    Kaynak: github.com/Roicool/rc-structure/webflow/global-styles.html
    ============================================ */
@@ -118,6 +118,12 @@ html.rc-modal-open{overflow:hidden}
 @media (prefers-reduced-motion:no-preference){dialog.fm-modal[open]{animation:rc-modal-in .2s ease-out}dialog.fm-modal[open]::backdrop{animation:rc-fade .2s ease-out}}
 @keyframes rc-modal-in{from{opacity:0;transform:translateY(.5rem)}to{opacity:1;transform:none}}
 @keyframes rc-fade{from{opacity:0}to{opacity:1}}
+
+/* Resources kartları (İnavitas Elektrik, Builder D): ton CMS'ten data-tone (Category › Card style). Light = base class */
+.res-card[data-tone="Mint"]{background-color:var(--accent--mint-soft)}
+.res-card[data-tone="Dark"]{background-color:var(--neutral--900);color:var(--neutral--0)}
+.res-card[data-tone="Dark"] .res-card-meta{color:var(--neutral--550)}
+.res-card[data-tone="Dark"] .res-card-cta{color:var(--accent--mint)}
 
 /* ── NAV DROPDOWN (JS'siz) ──────────────────────────────────────
    .nav-dropdown > .nav-link + .nav-dropdown-panel

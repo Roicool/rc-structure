@@ -1,6 +1,6 @@
 <style>
 /* ============================================
-   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.14
+   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.15
    Sadece Designer'ın veremediği şeyler.
    Kaynak: github.com/Roicool/rc-structure/webflow/global-styles.html
    ============================================ */
@@ -95,9 +95,17 @@ html { scroll-padding-top: 90px; }
 .why-nav-btn{transition:background-color .2s ease-out}
 .why-nav-btn:not([disabled]):hover,.why-nav-btn:not([disabled]):focus-visible{background-color:var(--interactive--nav-hover)}
 @media (prefers-reduced-motion:reduce){.why-card-shade,.why-card-reveal,.why-card-desc,.why-nav-btn{transition:none}}
-/* Nav aktif durum (Figma Services/Portfolio/About): metin altında 1px mint çizgi. Services: sayfanın main'inde data-nav-active="services"; Portfolio/About: Webflow w--current */
-body:has([data-nav-active="services"]) .nav-dropdown:has(.nav-dropdown-panel.is-services) > .nav-link, .nav .nav-link.w--current { position: relative; }
-body:has([data-nav-active="services"]) .nav-dropdown:has(.nav-dropdown-panel.is-services) > .nav-link::after, .nav .nav-link.w--current::after { content: ""; position: absolute; left: 15px; right: 11px; top: 35px; height: 1px; background-color: var(--accent--mint); }
+/* Nav aktif durum (Figma): metin altında 1px mint çizgi.
+   Liste sayfaları: Webflow w--current (nav-link veya açılır menüdeki dropdown-item).
+   CMS template / alt sayfalar: main'de data-nav-active="services" | "resources". */
+.nav .nav-link.w--current,
+.nav .nav-dropdown:has(.dropdown-item.w--current) > .nav-link,
+body:has([data-nav-active="services"]) .nav .nav-dropdown:has(.is-services):not(:has(a[href="/blogs"])) > .nav-link,
+body:has([data-nav-active="resources"]) .nav .nav-dropdown:has(a[href="/blogs"]) > .nav-link { position: relative; }
+.nav .nav-link.w--current::after,
+.nav .nav-dropdown:has(.dropdown-item.w--current) > .nav-link::after,
+body:has([data-nav-active="services"]) .nav .nav-dropdown:has(.is-services):not(:has(a[href="/blogs"])) > .nav-link::after,
+body:has([data-nav-active="resources"]) .nav .nav-dropdown:has(a[href="/blogs"]) > .nav-link::after { content: ""; position: absolute; left: 15px; right: 11px; top: 35px; height: 1px; background-color: var(--accent--mint); }
 /* Footer link hover (Figma): mint alt çizgi, metin rengi aynı. Sadece link (adres <p> değil) */
 a.ft-link{text-decoration-line:underline;text-decoration-color:transparent;text-decoration-thickness:1px;text-underline-offset:4px;transition:text-decoration-color .2s ease-out}
 a.ft-link:hover,a.ft-link:focus-visible{text-decoration-color:var(--accent--mint)}

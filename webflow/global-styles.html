@@ -1,6 +1,6 @@
 <style>
 /* ============================================
-   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.21
+   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.22
    Sadece Designer'ın veremediği şeyler.
    Kaynak: github.com/Roicool/rc-structure/webflow/global-styles.html
    ============================================ */
@@ -129,15 +129,22 @@ html.rc-modal-open{overflow:hidden}
 .res-tabs::-webkit-scrollbar{display:none}
 /* Makale / politika rich text (.res-rt). Taban boyut/renk/satır aralığı class'ta (16/28 neutral-600) */
 .res-rt p{margin:0 0 1.75rem}
-.res-rt>p:first-child{margin-top:2.5rem}
+.res-rt>:first-child{margin-top:3.75rem}
+.res-rt{padding-left:1rem;padding-right:1rem}
+.res-rt figure.w-richtext-figure-type-image{margin-left:-1rem;margin-right:-1rem}
 .res-rt>:last-child{margin-bottom:0}
 .res-rt h2{margin:4.5rem 0 .75rem;font-size:var(--text--4xl);line-height:1.2222;font-weight:400;letter-spacing:-.03125rem;color:var(--neutral--925)}
 .res-rt h3{margin:2rem 0 1.5rem;font-size:var(--text--stat-label);line-height:1.2857;font-weight:400;letter-spacing:-.03125rem;color:var(--neutral--925)}
-.res-rt h4{margin:1.5rem 0 0;font-size:1rem;line-height:1.5rem;font-weight:400;color:var(--neutral--925)}
+.res-rt h4{margin:1.75rem 0 0;font-size:1rem;line-height:1.5rem;font-weight:400;color:var(--neutral--925)}
+.res-rt h4+p{margin-top:0}
 .res-rt strong{font-weight:400;color:var(--neutral--925)}
 .res-rt a{color:var(--neutral--925);text-decoration:underline;text-decoration-color:var(--brand-secondary--600);text-underline-offset:4px}
 .res-rt ul,.res-rt ol{margin:0 0 1.75rem;padding-left:1.5rem}
-.res-rt li{margin-bottom:.75rem}
+.res-rt li{margin-bottom:1.75rem}
+.res-rt li>p{margin-bottom:0}
+.res-rt li>p+p{margin-top:0}
+.res-rt ol[type="a"]{list-style-type:lower-alpha}
+.res-rt li>ol,.res-rt li>ul{margin-top:1.75rem;margin-bottom:0}
 .res-rt ol ol{list-style-type:lower-alpha}
 .res-rt figure{margin:3.75rem 0}
 .res-rt figure img{width:100%;border:3px solid var(--neutral--900);border-radius:var(--radius--lg)}
@@ -145,6 +152,14 @@ html.rc-modal-open{overflow:hidden}
 .res-rt figcaption strong{font-weight:500}
 .res-rt .w-richtext-figure-type-video{width:min(82.5rem,calc(100vw - 2 * var(--view--px)));max-width:none;margin-left:50%;transform:translateX(-50%)}
 .res-rt .w-richtext-figure-type-video>div{border:3px solid var(--neutral--900);border-radius:var(--radius--lg);overflow:hidden}
+.res-rt .res-rt-table{margin:0 0 1.75rem;overflow-x:auto}
+.res-rt .res-rt-table table{width:100%;border-collapse:collapse;font-size:.875rem;line-height:1.25rem}
+.res-rt .res-rt-table th,.res-rt .res-rt-table td{padding:.75rem 1rem;border:1px solid var(--neutral--200);vertical-align:middle;text-align:left}
+.res-rt .res-rt-table th{width:30%;background-color:var(--neutral--100);font-weight:400;color:var(--neutral--925)}
+.res-rt .res-rt-table thead th{width:auto}
+.res-rt .res-rt-table td{color:var(--neutral--600)}
+.res-rt .res-rt-table ul{margin:0;padding-left:1.125rem}
+.res-rt .res-rt-table li{margin-bottom:.25rem}
 /* Media Text Row liste girintisi: Figma madde metni +30px (Webflow varsayılanı 40) */
 .svc-row-body ul{padding-left:1.875rem}
 /* bg-neutral-925: Webflow'da yalnız combo kaydı olarak var, global sınıf oluşturulamıyor ("already exists") → kural burada */

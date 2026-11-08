@@ -1,6 +1,6 @@
 <style>
 /* ============================================
-   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.15
+   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.16
    Sadece Designer'ın veremediği şeyler.
    Kaynak: github.com/Roicool/rc-structure/webflow/global-styles.html
    ============================================ */
@@ -109,6 +109,11 @@ body:has([data-nav-active="resources"]) .nav .nav-dropdown:has(a[href="/blogs"])
 /* Footer link hover (Figma): mint alt çizgi, metin rengi aynı. Sadece link (adres <p> değil) */
 a.ft-link{text-decoration-line:underline;text-decoration-color:transparent;text-decoration-thickness:1px;text-underline-offset:4px;transition:text-decoration-color .2s ease-out}
 a.ft-link:hover,a.ft-link:focus-visible{text-decoration-color:var(--accent--mint)}
+
+/* Form Modal (İnavitas Elektrik, Builder C): native popover="auto", JS'siz. Açıkken sayfa kaymaz */
+.fm-modal::backdrop{background:color-mix(in srgb,var(--neutral--950) 60%,transparent)}
+html:has(.fm-modal:popover-open){overflow:hidden}
+.ct-office-phone{opacity:.8}
 
 /* ── NAV DROPDOWN (JS'siz) ──────────────────────────────────────
    .nav-dropdown > .nav-link + .nav-dropdown-panel

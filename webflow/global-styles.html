@@ -1,6 +1,6 @@
 <style>
 /* ============================================
-   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.24
+   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.25
    Sadece Designer'ın veremediği şeyler.
    Kaynak: github.com/Roicool/rc-structure/webflow/global-styles.html
    ============================================ */
@@ -160,6 +160,8 @@ html.rc-modal-open{overflow:hidden}
 .res-rt .res-rt-table td{color:var(--neutral--600)}
 .res-rt .res-rt-table ul{margin:0;padding-left:1.125rem}
 .res-rt .res-rt-table li{margin-bottom:.25rem}
+/* Overview kutusu: Overview text bossa gizle (Webflow bos bagli alana w-dyn-bind-empty ekler) */
+[data-res-overview]:has(> .w-dyn-bind-empty){display:none}
 /* Blog arama (rc cms-filter v0.5.0) */
 [data-rc-filtered="out"]{display:none!important}
 mark.rc-filter-hl{background-color:var(--accent--mint);color:var(--neutral--925);padding:0;border-radius:0}

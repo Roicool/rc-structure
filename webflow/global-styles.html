@@ -1,6 +1,6 @@
 <style>
 /* ============================================
-   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.25
+   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.26
    Sadece Designer'ın veremediği şeyler.
    Kaynak: github.com/Roicool/rc-structure/webflow/global-styles.html
    ============================================ */
@@ -170,6 +170,21 @@ mark.rc-filter-hl{background-color:var(--accent--mint);color:var(--neutral--925)
 .res-search:focus-within{outline:2px solid var(--neutral--925);outline-offset:2px}
 .res-search-input::-webkit-search-cancel-button,.res-search-input::-webkit-search-decoration{-webkit-appearance:none;appearance:none}
 .res-search-clear:focus-visible{outline:2px solid var(--neutral--925);outline-offset:2px;border-radius:9999px}
+/* 404 (Not Found component) + Careers rolleri (details) */
+.nf-code{font-size:clamp(7rem,3rem + 13vw,16rem);-webkit-text-stroke:1.5px var(--border--color-border-mint)}
+.nf-link{border:1px solid color-mix(in srgb,var(--neutral--0) 10%,transparent)}
+.nf-link:hover,.nf-link:focus-visible{border-color:var(--border--color-border-mint);background-color:color-mix(in srgb,var(--neutral--0) 4%,transparent)}
+.nf-link:hover .nf-link-arrow{transform:translateX(4px)}
+.cr-role[open]{border-color:var(--neutral--200)}
+.cr-role-sum::-webkit-details-marker{display:none}
+.cr-role-sum::marker{content:""}
+.cr-role-sum:focus-visible{outline:2px solid var(--brand-secondary--500);outline-offset:2px;border-radius:var(--radius--lg)}
+.cr-role[open] .cr-caret{transform:rotate(180deg)}
+.cr-role[open] .cr-toggle-open{display:none}
+.cr-role[open] .cr-toggle-close{display:inline}
+.cr-rt ul{margin:0;padding-left:1.25rem}
+.cr-rt li{margin:0}
+@media (prefers-reduced-motion:reduce){.nf-link,.nf-link-arrow,.cr-role,.cr-caret{transition:none}}
 /* Media Text Row liste girintisi: Figma madde metni +30px (Webflow varsayılanı 40) */
 .svc-row-body ul{padding-left:1.875rem}
 /* bg-neutral-925: Webflow'da yalnız combo kaydı olarak var, global sınıf oluşturulamıyor ("already exists") → kural burada */

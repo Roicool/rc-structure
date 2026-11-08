@@ -1,6 +1,6 @@
 <style>
 /* ============================================
-   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.16
+   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.17
    Sadece Designer'ın veremediği şeyler.
    Kaynak: github.com/Roicool/rc-structure/webflow/global-styles.html
    ============================================ */
@@ -110,10 +110,14 @@ body:has([data-nav-active="resources"]) .nav .nav-dropdown:has(a[href="/blogs"])
 a.ft-link{text-decoration-line:underline;text-decoration-color:transparent;text-decoration-thickness:1px;text-underline-offset:4px;transition:text-decoration-color .2s ease-out}
 a.ft-link:hover,a.ft-link:focus-visible{text-decoration-color:var(--accent--mint)}
 
-/* Form Modal (İnavitas Elektrik, Builder C): native popover="auto", JS'siz. Açıkken sayfa kaymaz */
+/* Form Modal (İnavitas Elektrik, Builder C): DOM <dialog data-rc="modal">, rc modal v0.4.0. JS yoksa :target fallback */
+dialog.fm-modal:not([open]){display:none}
+html:not(.rc-modal-ready) dialog.fm-modal:target{display:block}
 .fm-modal::backdrop{background:color-mix(in srgb,var(--neutral--950) 60%,transparent)}
-html:has(.fm-modal:popover-open){overflow:hidden}
-.ct-office-phone{opacity:.8}
+html.rc-modal-open{overflow:hidden}
+@media (prefers-reduced-motion:no-preference){dialog.fm-modal[open]{animation:rc-modal-in .2s ease-out}dialog.fm-modal[open]::backdrop{animation:rc-fade .2s ease-out}}
+@keyframes rc-modal-in{from{opacity:0;transform:translateY(.5rem)}to{opacity:1;transform:none}}
+@keyframes rc-fade{from{opacity:0}to{opacity:1}}
 
 /* ── NAV DROPDOWN (JS'siz) ──────────────────────────────────────
    .nav-dropdown > .nav-link + .nav-dropdown-panel

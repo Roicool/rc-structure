@@ -7,6 +7,7 @@ const modules = {
   'nav-scroll': () => import('./modules/nav-scroll.js'),
   carousel: () => import('./modules/carousel.js'),
   modal: () => import('./modules/modal.js'),
+  'cms-filter': () => import('./modules/cms-filter.js'),
 };
 
 function init(root = document) {

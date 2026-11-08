@@ -1,6 +1,6 @@
 <style>
 /* ============================================
-   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.18
+   RC STRUCTURE — WEBFLOW GLOBAL CSS  v1.19
    Sadece Designer'ın veremediği şeyler.
    Kaynak: github.com/Roicool/rc-structure/webflow/global-styles.html
    ============================================ */
@@ -124,6 +124,8 @@ html.rc-modal-open{overflow:hidden}
 .res-card[data-tone="Dark"]{background-color:var(--neutral--900);color:var(--neutral--0)}
 .res-card[data-tone="Dark"] .res-card-meta{color:var(--neutral--550)}
 .res-card[data-tone="Dark"] .res-card-cta{color:var(--accent--mint)}
+/* Media Text Row liste girintisi: Figma madde metni +30px (Webflow varsayılanı 40) */
+.svc-row-body ul{padding-left:1.875rem}
 
 /* ── NAV DROPDOWN (JS'siz) ──────────────────────────────────────
    .nav-dropdown > .nav-link + .nav-dropdown-panel

@@ -34,6 +34,7 @@ npm run build      # dist/main.min.js üretir (commit'lenir)
 | Attribute | Modül | Açıklama |
 |-----------|-------|----------|
 | `data-rc="nav-scroll"` | `nav-scroll` | Fixed navbar: sayfa en üstteyken `data-rc-nav="top"` ekler (CSS şeffaf yapar), kaydırınca kaldırır. IntersectionObserver, scroll event yok. |
+| `data-rc="modal"` (DOM `<dialog id>`) | `modal` | Popup: `<a href="#id">` veya `[data-rc-modal-open="id"]` açar (showModal), `[data-rc-modal-close]` / Esc / backdrop kapatır. Açıkken `<html>.rc-modal-open` (kaydırma kilidi), init'te `<html>.rc-modal-ready`. JS yoksa Global Styles `dialog:target` fallback'i. Kapanınca odak geri döner, `#id` URL'den silinir. |
 
 Yeni modül: `src/modules/<ad>.js` (default export `(el) => {}`), `src/main.js` içindeki `modules` listesine eklenir, Webflow'da elemana `data-rc="<ad>"` verilir.
 
